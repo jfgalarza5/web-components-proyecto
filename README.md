@@ -50,7 +50,7 @@ Alertas que informan al usuario sobre cambios en su carrito.
 - Se posicionan de forma flotante.
 - Desaparecen automáticamente despues de unos segundos.
 
-### 5. Componentes de navegacion (Duran Giovanny) -------------------------------------------------------------
+### 5. Componentes de navegacion (Duran Giovanny) ----------------------------------------------------------
 
 - Menú superior con buscador
 - Selector de idioma y ubicación
