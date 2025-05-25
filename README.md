@@ -50,14 +50,70 @@ Alertas que informan al usuario sobre cambios en su carrito.
 - Se posicionan de forma flotante.
 - Desaparecen automáticamente despues de unos segundos.
 
-### 5. Barra de Envío Gratis
+### 5. Componentes de navegacion (Duran Giovanny) -------------------------------------------------------------
 
-Indicador visual que muestra el progreso hacia el envío gratuito.
+- Menú superior con buscador
+- Selector de idioma y ubicación
+- Menú desplegable de cuenta de usuario
+- Carrito de compras
+- Paginación
+- Menú lateral responsive
+- Categorías por íconos (estilo "historias" o accesos directos)
 
-**Elementos incluidos:**
-- Barra de progreso dinámica
-- Texto con el estado del envío
-- Indicación visual y textual al alcanzar el envío gratuito (`"Envío gratis"`)
+## 🧩 Componentes Incluidos
 
-**Comportamiento:**
-- Se actualiza automáticamente según el total acumulado del carrito
+### 1. `barra-superior`
+Barra de navegación con:
+- Logo
+- Campo de búsqueda
+- Selector de idioma y país
+- Cuenta de usuario
+- Enlace a devoluciones y pedidos
+- Carrito de compras
+
+### 2. `menu-lateral`
+Menú desplegable lateral con:
+- Enlaces a secciones como ofertas, listas, región, servicio al cliente
+- Acceso a cuentas y dispositivos
+
+### 3. `menu-categorias`
+Barra visual de categorías con íconos redondos para:
+- Vehículos, tecnología, ropa, hogar, deportes, etc.
+
+### 4. `paginacion-productos`
+Controles de paginación con botones:
+- Anterior / Siguiente
+- Números de página dinámicos
+## 🧠 Comportamiento
+
+### 🔹 `barra-superior`
+
+- El campo de búsqueda permite ingresar texto y muestra sugerencias dinámicas (simuladas).
+- El botón de lupa despliega una lista con resultados recientes.
+- El ícono de usuario muestra un menú desplegable con opciones como:
+  - Crear listas
+  - Ver pedidos
+  - Administrar cuenta y membresías
+- El selector de idioma permite cambiar entre Español e Inglés. También muestra la región seleccionada.
+
+### 🔹 `menu-lateral`
+
+- Al hacer clic en el botón de menú (☰), se despliega un panel lateral desde la izquierda.
+- Contiene enlaces organizados por sección:
+  - Navegación principal (Ofertas, Listas, Región, etc.)
+  - Sección de "Hola, inicia sesión" con accesos directos a contenido digital como:
+    - Kindle, Prime Video, Alexa, Audible, etc.
+- Se oculta automáticamente al hacer clic fuera del panel.
+
+### 🔹 `menu-categorias`
+
+- Muestra una fila de íconos redondos representando categorías destacadas como:
+  - Tecnología, Electrodomésticos, Ropa, Mascotas, etc.
+- Al hacer clic en una categoría, simula la navegación a una sección de productos.
+- Se adapta a pantallas pequeñas ocultando el texto y ajustando el tamaño de los íconos.
+
+### 🔹 `paginacion-productos`
+
+- Muestra botones numéricos para navegar entre páginas.
+- El botón “Anterior” se desactiva en la primera página.
+- Al seleccionar una página o “Siguiente”, se actualiza la vista activa (simulado).
