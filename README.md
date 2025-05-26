@@ -73,7 +73,7 @@ Indicador visual que muestra el progreso hacia el envío gratuito.
 - Menú lateral responsive
 - Categorías por íconos (estilo "historias" o accesos directos)
 
-## Componentes de Entrada de Usuario
+## Componentes de Entrada de Usuario (Jordan Guevara)
 ### 🔤 Tipografía
 
 - Familia: Sans-serif (sugerida: **Roboto** o **Montserrat**)
@@ -88,10 +88,6 @@ Indicador visual que muestra el progreso hacia el envío gratuito.
 
 Botón reutilizable para acciones primarias.
 
-```html
-<button class="btn btn-primary">Button</button>
-```
-
 Estados:
 - Default: verde oscuro `#006B3F`, texto blanco
 - Hover/Active: verde más claro
@@ -101,12 +97,7 @@ Estados:
 
 ### 🟦 Tabs (Pestañas de Navegación)
 
-```html
-<ul class="nav nav-tabs">
-  <li class="nav-item active">Items</li>
-  <li class="nav-item">Items</li>
-</ul>
-```
+
 
 Estados:
 - Activo: fondo verde con texto blanco
@@ -116,9 +107,6 @@ Estados:
 
 ### 🟥 Inputs (Campos de texto)
 
-```html
-<input type="text" class="form-control" placeholder="Texto">
-```
 
 Estados:
 - Normal: borde gris
@@ -130,13 +118,6 @@ Estados:
 
 ### ✅ Checkbox + Texto legal
 
-```html
-<input type="checkbox" checked>
-<span>
-  Haz clic aquí si estás de acuerdo con nuestra 
-  <a href="#">política de privacidad</a>.
-</span>
-```
 
 - Incluye texto informativo con enlace institucional
 - Icono de validación en verde
@@ -155,7 +136,6 @@ Estados:
 - Estilo circular (`border-radius: 50%`)
 - Íconos representativos: filtro, búsqueda, carrito
 - Usos: acciones rápidas o accesos flotantes en móviles
-
 
 ## 🧩 Componentes Incluidos
 
