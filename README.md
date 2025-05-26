@@ -73,6 +73,90 @@ Indicador visual que muestra el progreso hacia el envío gratuito.
 - Menú lateral responsive
 - Categorías por íconos (estilo "historias" o accesos directos)
 
+## Componentes de Entrada de Usuario
+### 🔤 Tipografía
+
+- Familia: Sans-serif (sugerida: **Roboto** o **Montserrat**)
+- Tamaños estándar: `12px`, `14px`, `16px`
+- Peso: Regular / Bold
+
+---
+
+## 🔧 Componentes Atómicos
+
+### 🟩 Botón
+
+Botón reutilizable para acciones primarias.
+
+```html
+<button class="btn btn-primary">Button</button>
+```
+
+Estados:
+- Default: verde oscuro `#006B3F`, texto blanco
+- Hover/Active: verde más claro
+- Disabled: fondo desaturado, texto gris claro
+
+---
+
+### 🟦 Tabs (Pestañas de Navegación)
+
+```html
+<ul class="nav nav-tabs">
+  <li class="nav-item active">Items</li>
+  <li class="nav-item">Items</li>
+</ul>
+```
+
+Estados:
+- Activo: fondo verde con texto blanco
+- Inactivo: fondo blanco, borde punteado
+
+---
+
+### 🟥 Inputs (Campos de texto)
+
+```html
+<input type="text" class="form-control" placeholder="Texto">
+```
+
+Estados:
+- Normal: borde gris
+- Validado: borde verde
+- Deshabilitado: fondo gris claro
+- Error: borde rojo + mensaje de error
+
+---
+
+### ✅ Checkbox + Texto legal
+
+```html
+<input type="checkbox" checked>
+<span>
+  Haz clic aquí si estás de acuerdo con nuestra 
+  <a href="#">política de privacidad</a>.
+</span>
+```
+
+- Incluye texto informativo con enlace institucional
+- Icono de validación en verde
+- Útil para formularios con consentimiento
+
+---
+
+### ⬛ Botones Flotantes (Icon Buttons / FABs)
+
+```html
+<button class="fab"><i class="icon-filtro"></i></button>
+<button class="fab"><i class="icon-busqueda"></i></button>
+<button class="fab"><i class="icon-carrito"></i></button>
+```
+
+- Estilo circular (`border-radius: 50%`)
+- Íconos representativos: filtro, búsqueda, carrito
+- Usos: acciones rápidas o accesos flotantes en móviles
+
+
 ## 🧩 Componentes Incluidos
 
 ### 1. `barra-superior`
