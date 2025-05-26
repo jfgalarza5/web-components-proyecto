@@ -50,7 +50,20 @@ Alertas que informan al usuario sobre cambios en su carrito.
 - Se posicionan de forma flotante.
 - Desaparecen automáticamente despues de unos segundos.
 
-### 5. Componentes de navegacion (Duran Giovanny) ----------------------------------------------------------
+### 5. Barra de Envío Gratis
+
+Indicador visual que muestra el progreso hacia el envío gratuito.
+
+**Elementos incluidos:**
+- Barra de progreso dinámica
+- Texto con el estado del envío
+- Indicación visual y textual al alcanzar el envío gratuito (`"Envío gratis"`)
+
+**Comportamiento:**
+- Se actualiza automáticamente según el total acumulado del carrito
+
+
+## Componentes de navegacion (Duran Giovanny) 
 
 - Menú superior con buscador
 - Selector de idioma y ubicación
@@ -120,3 +133,4 @@ Controles de paginación con botones:
 
 ## Referencias
 - [Enlace del Figma](https://www.figma.com/design/8tMipBuMrbw83sfuhSUQY7/Sistema-de-Dise%C3%B1o---ESPE-E-commerce?node-id=0-1&t=WuUwI7GtVpzrKKdF-1)
+- [Enlace de Imagen de referencia ESPE](https://drive.google.com/file/d/1eKjbo4xj1IXpu0F81JfsnHHbXcAf4ab1/view?usp=sharing)
