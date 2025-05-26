@@ -117,3 +117,6 @@ Controles de paginación con botones:
 - Muestra botones numéricos para navegar entre páginas.
 - El botón “Anterior” se desactiva en la primera página.
 - Al seleccionar una página o “Siguiente”, se actualiza la vista activa (simulado).
+
+## Referencias
+- [Enlace del Figma](https://www.figma.com/design/8tMipBuMrbw83sfuhSUQY7/Sistema-de-Dise%C3%B1o---ESPE-E-commerce?node-id=0-1&t=WuUwI7GtVpzrKKdF-1)
