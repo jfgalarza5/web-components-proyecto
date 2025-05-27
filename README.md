@@ -131,7 +131,7 @@ Permite interactividad visual sobre las imágenes del producto en tarjetas o gal
   transform: scale(1.1);
   transition: transform 0.3s ease-in-out;
 }
-
+```
 ## Componentes de navegacion (Duran Giovanny) 
 
 - Menú superior con buscador
