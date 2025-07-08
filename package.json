@@ -1,0 +1,22 @@
+{
+  "name": "proyecto_e-commerce",
+  "version": "1.0.0",
+  "description": "Avance unidad 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfgalarza5/web-components-proyecto.git"
+  },
+  "author": "Grupo Proyecto A",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jfgalarza5/web-components-proyecto/issues"
+  },
+  "homepage": "https://github.com/jfgalarza5/web-components-proyecto#readme",
+  "dependencies": {
+    "lit": "^3.3.0"
+  }
+}
