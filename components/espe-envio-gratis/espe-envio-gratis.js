@@ -16,25 +16,36 @@ class ESPEEnvioGratis extends LitElement {
     this.tema = 'claro';
   }
 
-  calcularProgreso() {
-    const porcentaje = Math.min((this.totalActual / this.totalGratis) * 100, 100);
-    return `${porcentaje}%`;
+  connectedCallback() {
+    super.connectedCallback();
+    this._aplicarTema();
   }
 
-  renderEstado() {
-    if (this.totalActual >= this.totalGratis) {
-      return html`<p>¡Envío gratis!</p>`;
+  updated() {
+    this._aplicarTema();
+    ['totalActual', 'totalGratis'].forEach(prop => {
+      if (typeof this[prop] !== 'number' || isNaN(this[prop])) {
+        console.warn(`Propiedad ${prop} no válida, se reinicia a 0`);
+        this[prop] = 0;
+      }
+    });
+  }
+
+  _aplicarTema() {
+    const root = this.style;
+    if (this.tema === 'oscuro') {
+      root.setProperty('--envio-fondo', '#222');
+      root.setProperty('--envio-texto', '#eee');
+    } else {
+      root.setProperty('--envio-fondo', '#f9f9f9');
+      root.setProperty('--envio-texto', '#333');
     }
-    const faltante = (this.totalGratis - this.totalActual).toFixed(2);
-    return html`<p>Te faltan $${faltante} para el envío gratis</p>`;
   }
 
   render() {
     return html`
-      <div>
-        <h3>Envío</h3>
-        ${this.renderEstado()}
-        <div>Progreso: ${this.calcularProgreso()}</div>
+      <div style="background: var(--envio-fondo); color: var(--envio-texto); padding: 10px;">
+        Tema: ${this.tema}
       </div>
     `;
   }
