@@ -17,7 +17,14 @@ class ESPEResumenCompra extends LitElement {
   }
 
   render() {
-    return html`<p>Resumen de compra</p>`;
+    return html`
+      <div>
+        <h2>Resumen de compra</h2>
+        <p>Productos: $${this.productos.toFixed(2)}</p>
+        <p>Impuestos: $${this.impuestos.toFixed(2)}</p>
+        <p>Envío: $${this.envio.toFixed(2)}</p>
+      </div>
+    `;
   }
 }
 
