@@ -8,6 +8,7 @@ export class EspeProductoPreview extends LitElement {
     priceCurrent: { type: String },
     priceNormal: { type: String },
     imageSrc: { type: String },
+    enCarrito: { type: Boolean } 
   };
 
   static styles = css`
@@ -119,6 +120,12 @@ export class EspeProductoPreview extends LitElement {
       background-color: var(--color-primary);
       color: var(--color-default);
     }
+
+    button.en-carrito {
+      background-color: var(--color-primary);
+      color: var(--color-default);
+      border-color: var(--color-primary);
+    }
   `;
 
   constructor() {
@@ -129,6 +136,7 @@ export class EspeProductoPreview extends LitElement {
     this.priceCurrent = '';
     this.priceNormal = '';
     this.imageSrc = '';
+    this.enCarrito = false;
   }
 
   render() {
@@ -153,15 +161,27 @@ export class EspeProductoPreview extends LitElement {
             : html`<span class="price-current">${this.priceCurrent || this.priceNormal}</span>`}
         </div>
         <p class="product-description">${this.description}</p>
-        <button @click=${this._addToCart}>Añadir al carrito</button>
+        <button
+          class="${this.enCarrito ? 'en-carrito' : ''}"
+          @click=${this._toggleCarrito}
+        >
+          ${this.enCarrito ? 'Quitar del carrito' : 'Añadir al carrito'}
+        </button>
       </div>
     `;
   }
 
+  _toggleCarrito() {
+    this.enCarrito = !this.enCarrito;
 
-
-  _addToCart() {
-    alert(`Producto "${this.title}" añadido al carrito!`);
+    this.dispatchEvent(new CustomEvent(
+      this.enCarrito ? 'producto-anadido' : 'producto-removido',
+      {
+        detail: { producto: this.title },
+        bubbles: true,
+        composed: true
+      }
+    ));
   }
 }
 
