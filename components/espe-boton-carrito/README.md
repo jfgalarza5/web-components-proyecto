@@ -60,3 +60,9 @@ this.dispatchEvent(new CustomEvent('carrito-click', {
 <espe-icono-carrito cantidad="5" tema="claro"></espe-icono-carrito>
 ```
 La insignia se muestra solo si cantidad es mayor a 0. En caso contrario, se oculta.
+
+## Capturas
+
+Al llamar el componente en tu html se ve asi:
+
+![Componente](/docs/espe-boton-carrito/boton.png)
