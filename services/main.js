@@ -1,2 +1,2 @@
-import '../components/header-component.js';
-import '../components/footer-carousel.js';
+import '../components/headerFooter/header-component.js';
+import '../components/headerFooter/footer-carousel.js';
