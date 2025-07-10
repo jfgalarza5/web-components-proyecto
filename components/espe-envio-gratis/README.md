@@ -50,9 +50,7 @@ La barra de progreso se llena en proporcion a cuanto ha acumulado el usuario (to
 ## Capturas
 
 Modo claro
-
 ![Modo Claro](/docs/espe-envio-gratis/claro.png)
 
 Modo oscuro
-
 ![Modo Claro](/docs/espe-envio-gratis/oscuro.png)
