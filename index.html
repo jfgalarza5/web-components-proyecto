@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ESPE Shop</title>
 
-    <!-- Carga de todos los components -->
+    <!-- Carga de scripts -->
     <script type="module" src="./services/main.js"></script>
-    <!-- Componente espe-envio-gratis -->
+    <script type="module" src="./main.js"></script>
     <script type="module" src="./components/espe-envio-gratis/espe-envio-gratis.js"></script>
 
     <style>
@@ -36,7 +36,44 @@
       <p>Pelado Ciclo</p>
     </main>
 
-    <!-- Carrusel + Footer -->
+    <!-- Productos destacados -->
+    <espe-product-grid id="productGrid">
+      <espe-producto-preview
+        title="Laptop Gamer ESPE"
+        description="Procesador Intel i7 y tarjeta RTX 3060"
+        priceNormal="$1500"
+        imageSrc="../public/assets/computer_default.png"
+      ></espe-producto-preview>
+
+      <espe-producto-preview
+        title="Laptop Oficina ESPE"
+        description="Procesador Intel i5, ideal para tareas diarias"
+        priceCurrent="$700"
+        priceNormal="$900"
+        ofert="25%"
+        imageSrc="../public/assets/computer_default.png"
+      ></espe-producto-preview>
+
+      <espe-producto-preview
+        title="Laptop Ultra Liviana"
+        description="Diseño compacto y batería de larga duración"
+        priceCurrent="$650"
+        priceNormal="$1300"
+        ofert="50%"
+        imageSrc="../public/assets/computer_default.png"
+      ></espe-producto-preview>
+    </espe-product-grid>
+
+    <!-- Producto en carrito -->
+    <espe-product-car
+      title="Laptop Gamer ESPE"
+      priceCurrent="$1200"
+      priceNormal="$1500"
+      ofert="20%"
+      imageSrc="../public/assets/computer_default.png"
+    ></espe-product-car>
+
+    <!-- Carrusel de productos -->
     <footer-carousel>
       <img src="../img/img1.jpg"  alt="Producto 1">
       <img src="../img/img2.jpg"  alt="Producto 2">
