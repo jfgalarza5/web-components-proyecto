@@ -4,9 +4,16 @@
   "description": "Avance unidad 2",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "serve": "vite"
+=======
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+>>>>>>> eade120530392580c292aa184c5cad1969b1284b
   },
   "repository": {
     "type": "git",
