@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite"
+    "dev": "vite",
+    "serve": "vite"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,9 @@
   },
   "homepage": "https://github.com/jfgalarza5/web-components-proyecto#readme",
   "dependencies": {
-    "lit": "^3.3.0",
+    "lit": "^3.3.0"
+  },
+  "devDependencies": {
     "vite": "^7.0.3"
   }
 }
