@@ -73,13 +73,33 @@ class ESPEEnvioGratis extends LitElement {
   constructor() {
     super();
     this.totalActual = 0;
-    this.totalGratis = 50;
+    this.totalGratis = 0;
     this.tema = 'claro';
   }
 
   connectedCallback() {
     super.connectedCallback();
     this._aplicarTema();
+
+    this._productosMap = new Map();
+
+    window.addEventListener('carrito-actualizado', (e) => {
+      this._productosMap.set(e.detail.title, e.detail.total);
+      this._recalcular();
+    });
+
+    window.addEventListener('carrito-removido', (e) => {
+      this._productosMap.delete(e.detail.title);
+      this._recalcular();
+    });
+  }
+
+  _recalcular() {
+    let nuevoTotal = 0;
+    for (let valor of this._productosMap.values()) {
+      nuevoTotal += valor;
+    }
+    this.totalActual = nuevoTotal;
   }
 
   updated() {
@@ -91,6 +111,12 @@ class ESPEEnvioGratis extends LitElement {
         this[prop] = 0;
       }
     });
+
+    this.dispatchEvent(new CustomEvent('envio-gratis', {
+      detail: { gratis: this.totalActual >= this.totalGratis},
+      bubbles: true,
+      composed: true
+    }));
   }
 
   _aplicarTema() {

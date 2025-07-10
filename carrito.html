@@ -4,49 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ESPE Shop</title>
-
-    <!-- Carga de scripts -->
     <script type="module" src="./services/main.js"></script>
-    <script type="module" src="./components/espe-envio-gratis/espe-envio-gratis.js"></script>
-    
+
     <style>
       body {
         background-color: #f5f5f5;
         margin: 0;
         font-family: Arial, sans-serif;
       }
+      .container{
+        display: flex;
+        padding: 50px;
+      }
+      .resumen-compra{
+        flex: 1;
+        gap: 10px;
+      }
+      .productos{
+        flex: 2;
+      }
     </style>
   </head>
   <body>
     <!-- Cabecera -->
     <header-component></header-component>
-    <!-- Productos destacados -->
-    <espe-product-grid id="productGrid">
-      <espe-producto-preview
-        title="Laptop Gamer ESPE"
-        description="Procesador Intel i7 y tarjeta RTX 3060"
-        priceNormal="$1500"
-        imageSrc="../public/assets/computer_default.png"
-      ></espe-producto-preview>
 
-      <espe-producto-preview
-        title="Laptop Oficina ESPE"
-        description="Procesador Intel i5, ideal para tareas diarias"
-        priceCurrent="$700"
-        priceNormal="$900"
-        ofert="25%"
-        imageSrc="../public/assets/computer_default.png"
-      ></espe-producto-preview>
-
-      <espe-producto-preview
-        title="Laptop Ultra Liviana"
-        description="Diseño compacto y batería de larga duración"
-        priceCurrent="$650"
-        priceNormal="$1300"
-        ofert="50%"
-        imageSrc="../public/assets/computer_default.png"
-      ></espe-producto-preview>
-    </espe-product-grid>
+    <section class="container">
+      <div class="productos">
+        <espe-product-car
+          title="Laptop Gamer ESPE"
+          priceCurrent="1200"
+          priceNormal="1500"
+          ofert="20%"
+          imageSrc="../public/assets/computer_default.png"
+        ></espe-product-car>
+        <espe-product-car
+          title="Laptop Lab ESPE"
+          priceCurrent="1200"
+          priceNormal="1500"
+          ofert="20%"
+          imageSrc="../public/assets/computer_default.png"
+        ></espe-product-car>
+      </div>
+      <div class="resumen-compra">
+        <espe-envio-gratis totalGratis="10000"></espe-envio-gratis>
+        <br>
+        <espe-resumen-compra envio="20"></espe-resumen-compra>
+      </div>
+    </section>
 
     <!-- Carrusel de productos -->
     <footer-carousel>
@@ -69,7 +74,5 @@
       <img src="../img/img17.jpg" alt="Producto 17">
       <img src="../img/img18.jpg" alt="Producto 18">
     </footer-carousel>
-
-    <script src="./services/cart-services.js" type="module"></script>
   </body>
 </html>

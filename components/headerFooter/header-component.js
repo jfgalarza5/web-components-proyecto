@@ -2,26 +2,44 @@ import { LitElement, html, css } from 'lit';
 
 class HeaderComponent extends LitElement {
   static properties = {
-    menuOpen:        { type: Boolean },
-    showLangMenu:    { type: Boolean },
+    menuOpen: { type: Boolean },
+    showLangMenu: { type: Boolean },
     showAccountMenu: { type: Boolean }
   };
 
   constructor() {
     super();
-    this.menuOpen        = false;
-    this.showLangMenu    = false;
+    this.menuOpen = false;
+    this.showLangMenu = false;
     this.showAccountMenu = false;
     this._onOutsideClick = this._onOutsideClick.bind(this);
   }
 
+  _manejarProductoAnadido = () => {
+    const carrito = this.renderRoot.querySelector('espe-boton-carrito');
+    if (carrito) {
+      carrito.cantidad += 1;
+    }
+  };
+
+  _manejarProductoRemovido = () => {
+    const carrito = this.renderRoot.querySelector('espe-boton-carrito');
+    if (carrito) {
+      carrito.cantidad -= 1;
+    }
+  };
+
   connectedCallback() {
     super.connectedCallback();
     window.addEventListener('click', this._onOutsideClick);
+    window.addEventListener('producto-anadido', this._manejarProductoAnadido);
+    window.addEventListener('producto-removido', this._manejarProductoRemovido);
   }
 
   disconnectedCallback() {
     window.removeEventListener('click', this._onOutsideClick);
+    window.removeEventListener('producto-anadido', this._manejarProductoAnadido);
+    window.removeEventListener('producto-removido', this._manejarProductoRemovido);
     super.disconnectedCallback();
   }
 
@@ -40,10 +58,10 @@ class HeaderComponent extends LitElement {
     /* Header superior */
     .header-top {
       background: #006935; color: white;
-      display: flex; align-items: center;
+      display: flex; align-items: center; justify-content: center;
       padding: 10px 20px; gap: 20px; flex-wrap: wrap;
     }
-    .logo { font-size: 1.2rem; font-weight: bold; }
+    .logo { font-size: 1.2rem; font-weight: bold; cursor: pointer;}
     .search-bar { flex:1; display:flex; max-width:500px; }
     .search-bar select, .search-bar input { padding:6px; border:none; }
     .search-bar input { flex:1; }
@@ -151,7 +169,7 @@ class HeaderComponent extends LitElement {
 
       <!-- Header Top -->
       <div class="header-top">
-        <div class="logo">ESPE Shop</div>
+        <div class="logo" @click="${()=>window.location.replace("/")}">ESPE Shop</div>
         <div class="search-bar">
           <select><option>Todos</option><option>Libros</option><option>Tecnología</option></select>
           <input type="text" placeholder="Buscar en ESPE Shop" />
@@ -190,7 +208,7 @@ class HeaderComponent extends LitElement {
           </div>
 
           <!-- Carrito -->
-          <div>🛒 Carrito</div>
+          <espe-boton-carrito></espe-boton-carrito>
         </div>
       </div>
 

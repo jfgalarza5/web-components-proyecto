@@ -78,17 +78,34 @@ class ESPEResumenCompra extends LitElement {
     this.productos = 0;
     this.envio = 0;
     this.impuestos = 0;
-    this.tema = 'claro'; // Por defecto claro
+    this.tema = 'claro';
+    
   }
 
   connectedCallback() {
     super.connectedCallback();
-    this.addEventListener('producto-agregado', (e) => {
-      if (typeof e.detail?.precio === 'number') {
-        this.productos += e.detail.precio;
+    this._productosMap = new Map();
+    this.envioOriginal = this.envio;
+
+    window.addEventListener('carrito-actualizado', (e) => {
+      this._productosMap.set(e.detail.title, e.detail.total);
+      this._recalcularTotal();
+    });
+
+    window.addEventListener('carrito-removido', (e) => {
+      this._productosMap.delete(e.detail.title);
+      this._recalcularTotal();
+    });
+
+    window.addEventListener('envio-gratis', (e) => {
+      if(e.detail.gratis){
+        this.envio=0;
+      }else{
+        this.envio = this.envioOriginal;
       }
     });
   }
+
 
   updated(changedProps) {
     this._aplicarTema();
@@ -116,6 +133,11 @@ class ESPEResumenCompra extends LitElement {
       root.setProperty('--verde-hover', '#218838');
       root.setProperty('--borde', '#cccccc');
     }
+  }
+
+  _recalcularTotal() {
+    this.productos = Array.from(this._productosMap.values()).reduce((a, b) => a + b, 0);
+    this.impuestos = this.productos*0.15;
   }
 
   calcularTotal() {

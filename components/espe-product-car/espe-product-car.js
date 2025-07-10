@@ -185,15 +185,20 @@ export class EspeCartItem extends LitElement {
   }
 
   _dispatchQuantityChanged() {
-    this.dispatchEvent(new CustomEvent('quantity-changed', {
-      detail: { title: this.title, quantity: this.quantity },
+    const price = parseFloat(this.priceCurrent || this.priceNormal || 0);
+    this.dispatchEvent(new CustomEvent('carrito-actualizado', {
+      detail: {
+        title: this.title,
+        quantity: this.quantity,
+        total: this.quantity * price
+      },
       bubbles: true,
       composed: true
     }));
   }
 
   _removeItem() {
-    this.dispatchEvent(new CustomEvent('remove-from-cart', {
+    this.dispatchEvent(new CustomEvent('carrito-removido', {
       detail: { title: this.title },
       bubbles: true,
       composed: true
